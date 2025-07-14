@@ -6,16 +6,19 @@ struct Library {
     char userName[50];
     int userId;
     int numberOfBooks;
-    char requestedBooks[10][50];
+    char requestedBooks[3][50];
 };
 
 struct Book {
     char bookName[50];
-    float price;
     char authorName[50];
     int year;
+    float price;
 };
-struct Book Details[] = {
+
+int main() {
+    struct Library frontDesk = {"Yamuna", 101, "", 0, 0, "" };
+    struct Book Details[5] = {
 	 {"C Programming Language", "Dennis Ritchie", 1978, 250},
 	 {"Data Structure", "Mark Allen Weiss", 1995, 300},
 	 {"Machine Learning", "Tom Mitchell", 1997, 400},
@@ -23,12 +26,11 @@ struct Book Details[] = {
 	 {"Artificial Intelligence", "Stuart Russell", 2010, 450}
       };
 
-int autoGenUserId = 1;
-
-int main() {
-    struct Library frontDesk = {"Yamuna", 101, "", 0, 0, "" };
-    int i, n;
-    //clrscr();
+    int i;
+    char bookName1[10];
+    char bookName2[10];
+    char bookName3[10];
+    clrscr();
 
     printf("------ Library Management ------\n");
     printf("Admin Name: %s\t", frontDesk.adminName);
@@ -37,32 +39,25 @@ int main() {
     printf("------ User Information ------\n");
       printf("Enter User Name: ");
       scanf("%s", &frontDesk.userName);
-      frontDesk.userId = autoGenUserId++;
-      //printf("Enter User ID: ");
-      //scanf("%d", &frontDesk.userId);
+      printf("Enter User ID: ");
+      scanf("%d", &frontDesk.userId);
       printf("Enter Number of Books(limit-max 3): ");
       scanf("%d", &frontDesk.numberOfBooks);
-	if(frontDesk.numberOfBooks >= 3) {
-	  printf("Select valid book count \n\n");
+	if(frontDesk.numberOfBooks!=0 && frontDesk.numberOfBooks <=3) {
+	  for(i=0; i<frontDesk.numberOfBooks; i++) {
+	   printf("Enter Book Name - %d:", i+1);
+	   scanf("%s", &bookName1);
+	   scanf("%s", &bookName2);
+	   scanf("%s", &bookName3);
+	  }
+	}else{
+	    printf("Select valid book count \n\n");
 	}
 
       printf("------ User Information ------\n");
       printf("User Name: %s\t", frontDesk.userName);
       printf("User ID: %d\n\n", frontDesk.userId);
       printf("Number Of Books: %d\n\n", frontDesk.numberOfBooks);
-      printf("Enter the name of 3 books you want: \n");
-      for(i = 0; i < n; i++) {
-	printf("Book Names: %d", i+1);
-	printf("Enter the Books Name: ");
-	scanf("%d", Details[i].bookName);
-
-	//printf("");
-
-      }
-      for(i = 0; i < n; i++) {
-	printf("Books Name: %d", Details[i].bookName);
-
-      }
 
     getchar();
     return 0;
