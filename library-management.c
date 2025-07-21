@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 
 struct Library {
     char adminName[50];
@@ -27,10 +28,7 @@ int main() {
       };
 
     int i;
-    //char bookName1[10];
-    //char bookName2[10];
-    //char bookName3[10];
-    clrscr();
+    //clrscr();
 
     printf("------ Library Management ------\n");
     printf("Admin Name: %s\t", frontDesk.adminName);
@@ -46,10 +44,7 @@ int main() {
 	if(frontDesk.numberOfBooks!=0 && frontDesk.numberOfBooks <=3) {
 	  for(i=0; i<frontDesk.numberOfBooks; i++) {
 	    printf("Enter Book Name - %d:", i+1);
-	    scanf("%s", &frontDesk.requestedBooks);
-	    //scanf("%s", &bookName1);
-	    //scanf("%s", &bookName2);
-	    //scanf("%s", &bookName3);
+	    scanf("%s", &frontDesk.requestedBooks[i]);
 	  }
 	}else{
 	    printf("Select valid book count \n\n");
@@ -59,7 +54,13 @@ int main() {
       printf("User Name: %s\t", frontDesk.userName);
       printf("User ID: %d\n\n", frontDesk.userId);
       printf("Number Of Books: %d\n\n", frontDesk.numberOfBooks);
+      printf("Books Name: ");
+
+      for(i=0; i<frontDesk.numberOfBooks; i++) {
+	printf("%d, %s\n", i+1, frontDesk.requestedBooks[i]);
+      }
 
     getchar();
     return 0;
+
 }
