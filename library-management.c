@@ -78,9 +78,6 @@ int main() {
       }
       for(i = 0; i < frontDesk.numberOfBooks; i++) {
 	for(j = 0; j < 5; j++) {
-	 (details[j].bookName);
-	 (frontDesk.requestedBooks[i]);
-
 	  if(strcmp(details[j].bookName, frontDesk.requestedBooks[i]) == 0)  {
 	    printf("Book: %s\n", details[j].bookName);
 	    printf("Author: %s\n", details[j].authorName);
