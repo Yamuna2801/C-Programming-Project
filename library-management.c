@@ -76,6 +76,20 @@ int main() {
 	 }
 	}
       }
+      for(i = 0; i < frontDesk.numberOfBooks; i++) {
+	for(j = 0; j < 5; j++) {
+	 (details[j].bookName);
+	 (frontDesk.requestedBooks[i]);
+
+	  if(strcmp(details[j].bookName, frontDesk.requestedBooks) == 0)  {
+	    printf("Book: %s\n", details[j].bookName);
+	    printf("Author: %s\n", details[j].authorName);
+	    printf("Year: %d\n", details[j].year);
+	    printf("Price: %.2f\n", details[j].price);
+	    printf("---------------------");
+	  }
+	}
+      }
 
     getchar();
     return 0;
