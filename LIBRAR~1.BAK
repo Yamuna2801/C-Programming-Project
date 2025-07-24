@@ -36,7 +36,7 @@ int main() {
     //User Interface
     printf("------ Library Management ------\n");
     printf("Admin Name: %s\t", frontDesk.adminName);
-    printf("Admin Id: %d\n\n", frontDesk.adminId);
+    printf("Admin Id: %d\n", frontDesk.adminId);
 
       printf("\n------ User Information ------\n");
       printf("Enter User Name: ");
@@ -57,11 +57,11 @@ int main() {
 	}
 
       //Result
-      printf("\n\n------ User Information ------\n");
+      printf("\n------ User Information ------\n");
       printf("User Name: %s\t", frontDesk.userName);
       printf("User ID: %d\n\n", frontDesk.userId);
       printf("Number Of Books: %d\n\n", frontDesk.numberOfBooks);
-      printf("Books Name: \n");
+      printf("Books Name: \n\n");
 
 
       for(i=0; i<frontDesk.numberOfBooks; i++) {
@@ -81,12 +81,12 @@ int main() {
 	 (details[j].bookName);
 	 (frontDesk.requestedBooks[i]);
 
-	  if(strcmp(details[j].bookName, frontDesk.requestedBooks) == 0)  {
+	  if(strcmp(details[j].bookName, frontDesk.requestedBooks[i]) == 0)  {
 	    printf("Book: %s\n", details[j].bookName);
 	    printf("Author: %s\n", details[j].authorName);
 	    printf("Year: %d\n", details[j].year);
 	    printf("Price: %.2f\n", details[j].price);
-	    printf("---------------------");
+	    printf("---------------------\n");
 	  }
 	}
       }
