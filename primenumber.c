@@ -23,7 +23,7 @@ int main() {
 	return;
       }
     }
-    getchar();
+    getch();
     return 0;
 }
 
